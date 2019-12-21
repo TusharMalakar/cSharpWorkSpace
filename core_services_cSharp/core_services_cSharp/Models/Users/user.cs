@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace core_services_cSharp.Security
+namespace core_services_cSharp.Models.Users
 {
-    public class SessionCookie
+    public class user
     {
     }
 }
