@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tusha\\source\\repos\\cSharpConsole\\cSharpConsole\\cSharpConsole.csproj",
+      "projectUniqueName": "C:\\Users\\tusha\\cSharpWorkSpace\\cSharpConsole\\cSharpConsole\\cSharpConsole.csproj",
       "projectName": "cSharpConsole",
-      "projectPath": "C:\\Users\\tusha\\source\\repos\\cSharpConsole\\cSharpConsole\\cSharpConsole.csproj",
+      "projectPath": "C:\\Users\\tusha\\cSharpWorkSpace\\cSharpConsole\\cSharpConsole\\cSharpConsole.csproj",
       "packagesPath": "C:\\Users\\tusha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tusha\\source\\repos\\cSharpConsole\\cSharpConsole\\obj\\",
+      "outputPath": "C:\\Users\\tusha\\cSharpWorkSpace\\cSharpConsole\\cSharpConsole\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tusha\\AppData\\Roaming\\NuGet\\NuGet.Config",
