@@ -7,5 +7,6 @@ namespace core_services_cSharp.Security
 {
     public class JWT
     {
+        public string SessionCookie;
     }
 }
