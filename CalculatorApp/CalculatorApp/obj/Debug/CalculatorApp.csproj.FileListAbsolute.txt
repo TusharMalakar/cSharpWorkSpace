@@ -1,5 +1,0 @@
-C:\Users\tusha\source\repos\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.csprojAssemblyReference.cache
-C:\Users\tusha\source\repos\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.Form1.resources
-C:\Users\tusha\source\repos\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.Properties.Resources.resources
-C:\Users\tusha\source\repos\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.csproj.GenerateResource.cache
-C:\Users\tusha\source\repos\CalculatorApp\CalculatorApp\obj\Debug\CalculatorApp.csproj.CoreCompileInputs.cache
