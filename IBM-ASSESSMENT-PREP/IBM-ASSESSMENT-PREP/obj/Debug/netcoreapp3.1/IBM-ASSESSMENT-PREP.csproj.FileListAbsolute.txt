@@ -1,0 +1,13 @@
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.exe
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.deps.json
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.runtimeconfig.json
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.runtimeconfig.dev.json
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.dll
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.pdb
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.csprojAssemblyReference.cache
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.csproj.CoreCompileInputs.cache
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.AssemblyInfoInputs.cache
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.AssemblyInfo.cs
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.dll
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.pdb
+C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.genruntimeconfig.cache
