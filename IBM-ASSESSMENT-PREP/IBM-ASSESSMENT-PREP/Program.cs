@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace IBM_ASSESSMENT_PREP
@@ -51,6 +52,36 @@ namespace IBM_ASSESSMENT_PREP
             lList.AddLast(61);
             lList.AddLast(91);
             lList.AddLast(31);
+
+            /**
+	         * Given a triangle, find the minimum path sum from top to bottom. Each step
+	         * you may move to adjacent numbers on the row below.	 * 
+	         * For example, given the following triangle 
+	         * [ 
+	         *   [2], 
+	         *  [3,4], 
+	         * [6,5,7],
+	         *[4,1,8,3] 
+	         * ] 	  
+	         * The minimum path sum from top to bottom is 11 (i.e., 2 + 3 +
+	         * 5 + 1 = 11).
+	         */
+            List<List<Int16>> Triangle = new List<List<Int16>>();
+            var row1 = new List<Int16>();
+            row1.Add(5);
+            Triangle.Add(row1);
+            var row2 = new List<Int16>();
+            row2.Add(2);
+            row2.Add(1);
+            row2.Add(6);
+            Triangle.Add(row2);
+            var row3 = new List<Int16>();
+            row3.Add(9);
+            row3.Add(10);
+            row3.Add(4);
+            Triangle.Add(row3);
+            var minToLeaf = new Graph().ShortesPath(Triangle);
+            Console.WriteLine(minToLeaf);
         }
     }
 
@@ -131,5 +162,43 @@ namespace IBM_ASSESSMENT_PREP
         public Object Data { get; set; }
         public ListNode? Next { get; set; }
         
+    }
+
+    public class Graph
+    {
+        public Int16 ShortesPath(List<List<Int16>> matrix)
+        {
+            Int16 minToLeaf = 0;
+            foreach (var row in matrix)
+            {
+                minToLeaf += row.Any() ? row.Min() : (Int16)0;
+            }
+            return minToLeaf;
+        }
+    }
+
+    public class Algorithms
+    {
+        public List<Object> ReverseList(List<Object> ObjList)
+        {
+            // STACK : LAST IN FIRST OUT (LIFO)
+            Stack<Object> stack = new Stack<Object>();
+            ObjList.ForEach(obj => {
+                stack.Push(obj);
+            });
+            return stack.ToList();
+        }
+
+        public List<Object> StayInLine(List<Object> ObjList)
+        {
+            // QUEUE : FIRST IN FIRST OUT (FIFO)
+            Queue<Object> queue = new Queue<Object>();
+            ObjList.ForEach(obj => {
+                queue.Enqueue(obj);
+                queue.Dequeue();
+            });
+            return queue.ToList();
+        }
+
     }
 }
