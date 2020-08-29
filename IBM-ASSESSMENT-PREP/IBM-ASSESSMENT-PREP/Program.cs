@@ -85,15 +85,11 @@ namespace IBM_ASSESSMENT_PREP
             //------Hacker Rank----//
             Algorithms alFun = new Algorithms();
             alFun.fizzBuzz(15);
-            var list1 = new List<int>()
-            {
-                1,3,5
-            };
-            var list2 = new List<int>()
-            {
-                3,5,7
-            };
+            var list1 = new List<int>() {1,3,5};
+            var list2 = new List<int>(){ 3,5,7};
             alFun.getMinCost(list1, list2);
+            var list3 = new List<int>() { 1,2,3, 4, 5 };
+            alFun.rotateList(4, list3);
         }
     }
 
@@ -244,15 +240,40 @@ namespace IBM_ASSESSMENT_PREP
             });
             return pairs.OrderBy(pair => pair.Value).FirstOrDefault().Key;
         }
+
         public long getMinCost(List<int> crew_id, List<int> job_id)
         {
             var minCost = 0;
-            Dictionary<int, int> diffPairs = new Dictionary<int, int>();
             crew_id.ForEach(crew => {
                 var job = getClosest(crew, job_id);
-                diffPairs.Add(job, (Math.Abs(job - crew)));   
+                job_id.Remove(job);
+                minCost += Math.Abs(job - crew);   
             });
             return minCost;
+        }
+
+        public void rotateList(int d, List<int> list)
+        {
+            var queue = new Queue<int>();
+            if (d < list.Count())
+            {
+                for (int i = d; i < list.Count(); i++)
+                {
+                    queue.Enqueue(list[i]);
+                }
+            }
+            for (int i = 0; i < d; i++)
+            {
+                queue.Enqueue(list[i]);
+            }
+            var qList = queue.ToList();
+            string result = qList[0].ToString();
+            for (int i = 1; i < qList.Count(); i++)
+            {
+                result += " " + qList[i];
+            }
+            Console.WriteLine(result);
+
         }
     }
 }
