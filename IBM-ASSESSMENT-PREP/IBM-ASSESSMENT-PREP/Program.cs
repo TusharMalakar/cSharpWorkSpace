@@ -81,6 +81,19 @@ namespace IBM_ASSESSMENT_PREP
             Triangle.Add(row3);
             var minToLeaf = new Graph().ShortesPath(Triangle);
             Console.WriteLine(minToLeaf);
+
+            //------Hacker Rank----//
+            Algorithms alFun = new Algorithms();
+            alFun.fizzBuzz(15);
+            var list1 = new List<int>()
+            {
+                1,3,5
+            };
+            var list2 = new List<int>()
+            {
+                3,5,7
+            };
+            alFun.getMinCost(list1, list2);
         }
     }
 
@@ -199,5 +212,47 @@ namespace IBM_ASSESSMENT_PREP
             return queue.ToList();
         }
 
+        public  void fizzBuzz(int n)
+        {
+            for (int i = 1; i <= n; i++)
+            {
+                //Console.WriteLine(i);
+                if (i % 3 == 0 && i % 5==0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else if(i % 3 != 0 && i % 5 != 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+
+        private static int getClosest(int num, List<int> nums)
+        {
+            Dictionary<int, int> pairs = new Dictionary<int, int>();
+            nums.ForEach(num_ => {
+                pairs.Add(num_, Math.Abs((num_ - num)));
+            });
+            return pairs.OrderBy(pair => pair.Value).FirstOrDefault().Key;
+        }
+        public long getMinCost(List<int> crew_id, List<int> job_id)
+        {
+            var minCost = 0;
+            Dictionary<int, int> diffPairs = new Dictionary<int, int>();
+            crew_id.ForEach(crew => {
+                var job = getClosest(crew, job_id);
+                diffPairs.Add(job, (Math.Abs(job - crew)));   
+            });
+            return minCost;
+        }
     }
 }
