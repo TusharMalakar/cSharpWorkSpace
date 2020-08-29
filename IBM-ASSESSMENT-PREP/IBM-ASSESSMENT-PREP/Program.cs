@@ -23,16 +23,11 @@ namespace IBM_ASSESSMENT_PREP
                     pairs[_char] = pairs[_char] + _char.ToString();
                 }
             };
-
             foreach (var pair in pairs)
             {
                 if (pairs[pair.Key].Length >= 3)
                 {
                     pairs.Remove(pair.Key);
-                }
-                else
-                {
-                    Console.WriteLine(pairs[pair.Key]);
                 }
             };
 
@@ -189,7 +184,7 @@ namespace IBM_ASSESSMENT_PREP
             return stack.ToList();
         }
 
-        public List<Object> StayInLine(List<Object> ObjList)
+        public List<Object> StayInQueue(List<Object> ObjList)
         {
             // QUEUE : FIRST IN FIRST OUT (FIFO)
             Queue<Object> queue = new Queue<Object>();
