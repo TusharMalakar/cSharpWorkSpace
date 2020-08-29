@@ -29,6 +29,10 @@ namespace IBM_ASSESSMENT_PREP
                 {
                     pairs.Remove(pair.Key);
                 }
+                else
+                {
+                    Console.WriteLine(pairs[pair.Key]);
+                }
             };
 
 
