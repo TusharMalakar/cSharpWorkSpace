@@ -150,8 +150,6 @@ namespace IBM_ASSESSMENT_PREP
             else if (parent.LeftChild == null && parent.RightChild != null)
                 parent.Height = 1 + parent.RightChild.Height;
 
-            //***************************************************************************************//
-            /*** FIX NULL EXCEPTIONS */
             // Rotations: There are 4 cases 
             //Left Left Case 
             int balanceFactor = GetBalanceFactor(parent);
@@ -188,34 +186,31 @@ namespace IBM_ASSESSMENT_PREP
         
         AvlNodeModel RotateRight(AvlNodeModel node)
         {
-            AvlNodeModel nodeLeftChild = node.LeftChild;
+            AvlNodeModel nodeLeftChild = node.RightChild;
             AvlNodeModel nodeLeftRightChild = nodeLeftChild.RightChild;
 
             // Perform Rotation
             nodeLeftChild.RightChild = node; 
             node.LeftChild = nodeLeftRightChild;
-            
-            // Update heights  
-            node.Height = node.LeftChild.Height >= node.RightChild.Height ? (node.LeftChild.Height + 1):  (node.RightChild.Height + 1);
-            nodeLeftChild.Height = nodeLeftChild.LeftChild.Height >= nodeLeftChild.RightChild.Height ? (nodeLeftChild.LeftChild.Height + 1) : (nodeLeftChild.RightChild.Height + 1);
+
+            // Update Height
+            //node.LeftChild.Height = node.LeftChild.LeftChild.Height >= node.LeftChild.RightChild.Height ? (node.LeftChild.LeftChild.Height + 1) : (node.LeftChild.RightChild.Height + 1);
+            //node.RightChild.Height = node.RightChild.LeftChild.Height >= node.RightChild.RightChild.Height ? (node.RightChild.LeftChild.Height + 1) : (node.RightChild.RightChild.Height + 1);
+            node.Height = node.LeftChild.Height >= node.RightChild.Height ? (node.LeftChild.Height + 1) : (node.RightChild.Height + 1);
             return node;
         }
 
         AvlNodeModel RotateLeft(AvlNodeModel node)
         {
-            /*** FIX NULL EXCEPTIONS */
-            AvlNodeModel nodeRightChild = node.RightChild;
-            /*** FIX NULL EXCEPTIONS */
+            AvlNodeModel nodeRightChild = node.LeftChild;
             AvlNodeModel nodeRightLeftChild = nodeRightChild.LeftChild;
-
-            // Perform Rotation
-            nodeRightChild.LeftChild = node;
-            node.RightChild = nodeRightLeftChild;
+            
+            // Perfor Rotations
+            node.LeftChild = nodeRightLeftChild;
+            node.RightChild = nodeRightChild;
 
             // Update Height
             node.Height = node.LeftChild.Height >= node.RightChild.Height ? (node.LeftChild.Height + 1) : (node.RightChild.Height + 1);
-            nodeRightChild.Height = 1 + (nodeRightChild.LeftChild.Height >= nodeRightChild.RightChild.Height ? nodeRightChild.LeftChild.Height : nodeRightChild.RightChild.Height);
-
             return node;
         }
     }
