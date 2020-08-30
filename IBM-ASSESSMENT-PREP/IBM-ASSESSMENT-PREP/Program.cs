@@ -45,12 +45,12 @@ namespace IBM_ASSESSMENT_PREP
 
             //----------------= LINKEDLIST =------------------//
             LinkedList lList = new LinkedList();
-            lList.AddFirst(6);
-            lList.AddFirst(9);
-            lList.AddFirst(3);
-            lList.AddLast(61);
-            lList.AddLast(91);
-            lList.AddLast(31);
+            //lList.AddFirst(6);
+            //lList.AddFirst(9);
+            //lList.AddFirst(3);
+            lList.AddLast(16);
+            lList.AddLast(13);
+            lList.PrintLinkedList(lList.list);
 
             /**
 	         * Given a triangle, find the minimum path sum from top to bottom. Each step
@@ -90,35 +90,162 @@ namespace IBM_ASSESSMENT_PREP
             alFun.getMinCost(list1, list2);
             var list3 = new List<int>() { 1,2,3, 4, 5 };
             alFun.rotateList(4, list3);
+
+            // ----- AVL TREE ------ //
+            AvlTree avl = new AvlTree();
+            avl.Insert(4);
+            avl.Insert(3);
+            avl.Insert(2);
+        }
+    }
+
+    public class AvlNodeModel
+    {
+        public int Height { get; set; }
+        public int Data { get; set; }
+        public AvlNodeModel? LeftChild { get; set; }
+        public AvlNodeModel? RightChild { get; set; }
+        public AvlNodeModel(int data)
+        {
+            this.Height = 1;
+            this.Data = data;
+            this.LeftChild = null;
+            this.RightChild = null;
+        }
+    }
+
+    public class AvlTree
+    {
+       
+        public AvlNodeModel Parent { get; set; }
+        public void Insert(int data) 
+        {
+            this.Parent = this.InsertRecursive(this.Parent, new AvlNodeModel(data));
+        }
+        private AvlNodeModel InsertRecursive(AvlNodeModel parent, AvlNodeModel child)
+        {
+            // Insert In The Tree
+            if (parent == null)
+            {
+                parent = child;
+                return parent;
+            }
+            else
+            {
+                if(child.Data <= parent.Data)
+                {
+                    parent.LeftChild = InsertRecursive(parent.LeftChild, child);
+                }
+                else
+                {
+                    parent.RightChild = InsertRecursive(parent.RightChild, child);
+                }
+            }
+
+            // Update Height
+            if(parent.LeftChild != null && parent.RightChild != null)
+                parent.Height = 1 +(parent.LeftChild.Height >= parent.RightChild.Height ? parent.LeftChild.Height : parent.RightChild.Height);
+            else if (parent.LeftChild != null && parent.RightChild == null)
+                parent.Height = 1 + parent.LeftChild.Height;
+            else if (parent.LeftChild == null && parent.RightChild != null)
+                parent.Height = 1 + parent.RightChild.Height;
+
+            //***************************************************************************************//
+            /*** FIX NULL EXCEPTIONS */
+            // Rotations: There are 4 cases 
+            //Left Left Case 
+            int balanceFactor = GetBalanceFactor(parent);
+            if (balanceFactor > 1 && child.Data < parent.LeftChild.Data)
+                return RotateLeft(parent);
+            // Right Right Case  
+            if (balanceFactor < -1 && child.Data > parent.RightChild.Data)
+                return RotateRight(parent);
+            // Left Right Case  
+            if (balanceFactor > 1 && child.Data > parent.LeftChild.Data)
+            {
+                parent.LeftChild = RotateLeft(parent.LeftChild);
+                return RotateRight(parent);
+            }
+            // Right Left Case  
+            if (balanceFactor < -1 && child.Data < parent.RightChild.Data)
+            {
+                parent.RightChild = RotateRight(parent.RightChild);
+                return RotateLeft(parent);
+            }
+            return parent;
+        }
+        private int GetBalanceFactor(AvlNodeModel node)
+        {
+            if (node.LeftChild != null && node.RightChild != null)
+                return node.LeftChild.Height - node.RightChild.Height;
+            else if (node.LeftChild != null && node.RightChild == null)
+                return node.LeftChild.Height;
+            else if (node.LeftChild == null && node.RightChild != null)
+                return node.RightChild.Height;
+            else
+                return 0;
+        }
+        
+        AvlNodeModel RotateRight(AvlNodeModel node)
+        {
+            AvlNodeModel nodeLeftChild = node.LeftChild;
+            AvlNodeModel nodeLeftRightChild = nodeLeftChild.RightChild;
+
+            // Perform Rotation
+            nodeLeftChild.RightChild = node; 
+            node.LeftChild = nodeLeftRightChild;
+            
+            // Update heights  
+            node.Height = node.LeftChild.Height >= node.RightChild.Height ? (node.LeftChild.Height + 1):  (node.RightChild.Height + 1);
+            nodeLeftChild.Height = nodeLeftChild.LeftChild.Height >= nodeLeftChild.RightChild.Height ? (nodeLeftChild.LeftChild.Height + 1) : (nodeLeftChild.RightChild.Height + 1);
+            return node;
+        }
+
+        AvlNodeModel RotateLeft(AvlNodeModel node)
+        {
+            /*** FIX NULL EXCEPTIONS */
+            AvlNodeModel nodeRightChild = node.RightChild;
+            /*** FIX NULL EXCEPTIONS */
+            AvlNodeModel nodeRightLeftChild = nodeRightChild.LeftChild;
+
+            // Perform Rotation
+            nodeRightChild.LeftChild = node;
+            node.RightChild = nodeRightLeftChild;
+
+            // Update Height
+            node.Height = node.LeftChild.Height >= node.RightChild.Height ? (node.LeftChild.Height + 1) : (node.RightChild.Height + 1);
+            nodeRightChild.Height = 1 + (nodeRightChild.LeftChild.Height >= nodeRightChild.RightChild.Height ? nodeRightChild.LeftChild.Height : nodeRightChild.RightChild.Height);
+
+            return node;
         }
     }
 
 
     public class BST
     {
-        public BSTNode Root { get; set; }
+        public BSTNode Patent { get; set; }
 
         public void Insert(int key)
         {
-            Root = InsertRecursive(Root, key);
+            Patent = InsertRecursive(Patent, key);
         }
 
-        BSTNode InsertRecursive(BSTNode root, int key)
+        BSTNode InsertRecursive(BSTNode parent, int key)
         {
             // BASE CASE: WHEN ROOT IS NULL
-            if (root == null)
+            if (parent == null)
             {
-                root = new BSTNode();
-                root.Value = key;
-                return root;
+                parent = new BSTNode();
+                parent.Value = key;
+                return parent;
             }
             // INDUCTIVE CASE: WHEN ROOT IS NOT NULL
-            if (key < root.Value)
-                root.Left = InsertRecursive(root.Left, key);
-            else if (key > root.Value)
-                root.Right = InsertRecursive(root.Right, key);
+            if (key < parent.Value)
+                parent.LeftChild = InsertRecursive(parent.LeftChild, key);
+            else if (key > parent.Value)
+                parent.RightChild = InsertRecursive(parent.RightChild, key);
 
-            return root;
+            return parent;
         }
 
     }
@@ -126,15 +253,15 @@ namespace IBM_ASSESSMENT_PREP
     public class BSTNode
     {
 
-        public BSTNode? Left { get; set; }
-        public BSTNode? Right { get; set; }
+        public BSTNode? LeftChild { get; set; }
+        public BSTNode? RightChild { get; set; }
         public int Value { get; set; }
 
     }
 
     public class LinkedList
     {
-        private ListNode list { get; set; }
+        public ListNode list { get; set; }
         public void AddFirst(Object data)
         {
             ListNode newNode = new ListNode();
@@ -161,6 +288,20 @@ namespace IBM_ASSESSMENT_PREP
                     current = current.Next;
                 }
                 current.Next = newNode;
+            }
+        }
+
+        public void PrintLinkedList(ListNode head)
+        {
+            
+            while (head.Next != null)
+            {
+                Console.WriteLine(head.Data);
+                head = head.Next;
+            }
+            if(head.Next == null)
+            {
+                Console.WriteLine(head.Data);
             }
         }
     }
