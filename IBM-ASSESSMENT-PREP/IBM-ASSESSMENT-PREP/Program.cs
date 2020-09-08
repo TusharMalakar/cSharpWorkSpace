@@ -90,6 +90,8 @@ namespace IBM_ASSESSMENT_PREP
             alFun.getMinCost(list1, list2);
             var list3 = new List<int>() { 1,2,3, 4, 5 };
             alFun.rotateList(4, list3);
+            List<int> unSortedList = new List<int>() { 5, 3, 8, 0, 0, 2, 19 };
+            alFun.InsertionSort(unSortedList);
 
             // ----- AVL TREE ------ //
             AvlTree avl = new AvlTree();
@@ -216,6 +218,7 @@ namespace IBM_ASSESSMENT_PREP
     }
 
 
+
     public class BST
     {
         public BSTNode Patent { get; set; }
@@ -323,6 +326,80 @@ namespace IBM_ASSESSMENT_PREP
 
     public class Algorithms
     {
+        public List<int> SelectionSort(List<int> list)
+        {
+            // Selection Sort Time Complexity: Worst and Best => n^2
+            
+            // The selection sort algorithm sorts an array by repeatedly finding the 
+            // minimum element (considering ascending order) from unsorted part and 
+            // putting it at the beginning. The algorithm maintains two subarrays in a given array..
+            for (int i = 0; i < list.Count() - 1; i++)
+            {  
+                for (int j = i + 1; j < list.Count(); j++)
+                {
+                    // Find the minimum element in unsorted array 
+                    if (list[j] < list[i])
+                    {
+                        // Swap the found minimum element with the first element 
+                        int temp = list[j];
+                        list[j] = list[i];
+                        list[i] = temp;
+                    }
+                }    
+            }
+            return list;
+        }
+        public List<int> BubbleSort(List<int> list)
+        {
+            // Bubble Sort Time Complexity: Worst => n^2 and Best => n
+            //Bubble Sort repeatedly swap the adjacent elements if they are in wrong order.
+            for (int i=0; i<list.Count()-1; i++)
+            {
+                // 5, 3, 2
+                // first => 3,2,5 
+
+                // After first the last index is sorted that's
+                // we can ignore the last index for the follow-up iterations
+                for(int j=0; j<list.Count()-i-1; j++)
+                {
+                    // Compare index j with all j+1
+                    // if j is greater than j+1: swap
+                    if(list[j]>list[j+1])
+                    {
+                        // swap list[j+1] and list[i] 
+                        int temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                    }
+                }
+            }
+            return list;
+        }
+
+        public List<int> InsertionSort(List<int> list)
+        {
+            // Insertion Sort Time Complexity: Worst => n^2 and Best => n
+            
+            // Insertion sort is a simple sorting algorithm that works 
+            // similar to the way you sort playing cards in your hands. 
+            // The array is virtually split into a sorted and an unsorted part. 
+            // Values from the unsorted part are picked and placed at the correct position in the sorted part.
+            for (int i = 0; i < list.Count() - 1; i++)
+            {
+                /* Move elements of arr[0..i-1], that are 
+               greater than key, to one position ahead 
+               of their current position */
+                int key = list[i];
+                int j = i - 1;
+                while (j >= 0 && list[j] > list[i])
+                {
+                    list[j + 1] = list[j];
+                    j = j - 1;
+                }
+                list[j + 1] = list[i];
+            }
+            return list;
+        }
         public List<Object> ReverseList(List<Object> ObjList)
         {
             // STACK : LAST IN FIRST OUT (LIFO)
