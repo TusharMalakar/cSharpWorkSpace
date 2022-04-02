@@ -9,7 +9,7 @@ namespace IBM_ASSESSMENT_PREP
     {
         public static void Main(string[] args)
         {
-            var result = RemoveInvalidParenthesis("(v)())()");
+            RemoveInvalidParenthesis("()))()(");
             var res = "123".ToCharArray();
             Algorithms.countingValleys(12, "DDUUDDUDUUUD");
             String word = "AABBCCCBAT";
@@ -110,35 +110,47 @@ namespace IBM_ASSESSMENT_PREP
         /// </summary>
         /// <param name="stringInput"></param>
         /// <returns>correct stringInput</returns>
-        public static IEnumerable<string> RemoveInvalidParenthesis(string stringInput)
+        public static List<string> RemoveInvalidParenthesis(string stringInput)
         {
-            if (string.IsNullOrEmpty(stringInput)) return null;
+            var result = new List<string>();
+            if (string.IsNullOrEmpty(stringInput)) return result;
+            
 
             // Using Breath-First-Search Algorithm
             HashSet<string> visited = new HashSet<string>();
+            LinkedList<string> nextToVisit = new LinkedList<string>();
+            nextToVisit.AddLast(stringInput);
             visited.Add(stringInput);
+
             string temp;
+            bool level = false;
 
-
-            if (IsValidString(stringInput))
+            while (nextToVisit.Any())
             {
-                Console.WriteLine("We have a valid string : => " + stringInput);
-            }
-
-            for (int i = 0; i < stringInput.Length; i++)
-            {
-                if (!IsParenthesis(stringInput[i])) continue;
-
-                //Removing parenthesis from inputString 
-                // and pushing into queue if not visited
-                temp = stringInput.Substring(0, i) + stringInput.Substring(i + 1);
-                if (!visited.Contains(temp))
+                stringInput = nextToVisit.First();
+                nextToVisit.RemoveFirst();
+                if (IsValidString(stringInput))
                 {
-                    visited.Add(temp);
+                    result.Add(stringInput);
+                    level = true;
+                }
+
+                if (level) continue;
+                for (int i = 0; i < stringInput.Length; i++)
+                {
+                    if (!IsParenthesis(stringInput[i])) continue;
+
+                    //Removing parenthesis from inputString 
+                    // and pushing into queue if not visited
+                    temp = stringInput.Substring(0, i) + stringInput.Substring(i + 1);
+                    if (!visited.Contains(temp))
+                    {
+                        nextToVisit.AddLast(temp);
+                        visited.Add(temp);
+                    }
                 }
             }
-
-            return visited.Where(item => IsValidString(item)); ;
+            return result;
         }
 
         private static bool IsValidString(string _string)
