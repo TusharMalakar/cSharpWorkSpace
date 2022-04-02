@@ -11,3 +11,16 @@ C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\ne
 C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.dll
 C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.pdb
 C:\Users\tusha\source\repos\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.genruntimeconfig.cache
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.exe
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.deps.json
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.runtimeconfig.json
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.runtimeconfig.dev.json
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.dll
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\bin\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.pdb
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.csprojAssemblyReference.cache
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.AssemblyInfoInputs.cache
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.AssemblyInfo.cs
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.csproj.CoreCompileInputs.cache
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.dll
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.pdb
+C:\Users\Tushar\Desktop\InterviewPre\cSharpWorkSpace\IBM-ASSESSMENT-PREP\IBM-ASSESSMENT-PREP\obj\Debug\netcoreapp3.1\IBM-ASSESSMENT-PREP.genruntimeconfig.cache

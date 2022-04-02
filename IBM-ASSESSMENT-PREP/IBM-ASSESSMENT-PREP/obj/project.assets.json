@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\tusha\\.nuget\\packages\\": {}
+    "C:\\Users\\Tushar\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tusha\\source\\repos\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP.csproj",
+      "projectUniqueName": "C:\\Users\\Tushar\\Desktop\\InterviewPre\\cSharpWorkSpace\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP.csproj",
       "projectName": "IBM-ASSESSMENT-PREP",
-      "projectPath": "C:\\Users\\tusha\\source\\repos\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP.csproj",
-      "packagesPath": "C:\\Users\\tusha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tusha\\source\\repos\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP\\obj\\",
+      "projectPath": "C:\\Users\\Tushar\\Desktop\\InterviewPre\\cSharpWorkSpace\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP.csproj",
+      "packagesPath": "C:\\Users\\Tushar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tushar\\Desktop\\InterviewPre\\cSharpWorkSpace\\IBM-ASSESSMENT-PREP\\IBM-ASSESSMENT-PREP\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\tusha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tushar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -43,6 +48,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -58,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

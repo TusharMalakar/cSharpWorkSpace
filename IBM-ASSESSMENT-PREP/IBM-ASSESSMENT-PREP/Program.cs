@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace IBM_ASSESSMENT_PREP
@@ -8,11 +9,13 @@ namespace IBM_ASSESSMENT_PREP
     {
         public static void Main(string[] args)
         {
+            var res = "123".ToCharArray();
+            Algorithms.countingValleys(12, "DDUUDDUDUUUD");
             String word = "AABBCCCBAT";
             Dictionary<Char, String> pairs = new Dictionary<Char, String>(); // HashMap
             foreach (Char _char in word)
             {
-                if (!pairs.ContainsKey(_char))
+                if (!pairs.ContainsKey(_char)) //
                 {
                     // add new key and value
                     pairs.Add(_char, _char.ToString());
@@ -65,16 +68,16 @@ namespace IBM_ASSESSMENT_PREP
 	         * The minimum path sum from top to bottom is 11 (i.e., 2 + 3 +
 	         * 5 + 1 = 11).
 	         */
-            List<List<Int16>> Triangle = new List<List<Int16>>();
-            var row1 = new List<Int16>();
+            List<List<int>> Triangle = new List<List<int>>();
+            var row1 = new List<int>();
             row1.Add(5);
             Triangle.Add(row1);
-            var row2 = new List<Int16>();
+            var row2 = new List<int>();
             row2.Add(2);
             row2.Add(1);
             row2.Add(6);
             Triangle.Add(row2);
-            var row3 = new List<Int16>();
+            var row3 = new List<int>();
             row3.Add(9);
             row3.Add(10);
             row3.Add(4);
@@ -98,6 +101,473 @@ namespace IBM_ASSESSMENT_PREP
             avl.Insert(4);
             avl.Insert(3);
             avl.Insert(2);
+        }
+
+        /// <summary>
+        /// Remove Odd paranthesis of a task
+        /// task = ((A+)B) => (A+B)
+        /// </summary>
+        /// <param name="stringInput"></param>
+        /// <returns>correct stringInput</returns>
+        public string RemoveInvalidParenthesis(string stringInput) 
+        {
+            //https://www.geeksforgeeks.org/remove-invalid-parentheses/
+            //stringInput.
+            return string.Empty;
+        }
+    }
+
+    public class GreedyAlgorithm
+    {
+        public class StandardGreedyAlgorithm
+        {
+            public void ActivitySelectionProblem()
+            {
+
+            }
+            public void EgyptianFraction()
+            {
+
+            }
+            public void JobSequenceProblem()
+            {
+
+            }
+            public void JobSequenceProlemOfDisjointSet()
+            {
+
+            }
+            public void JobSequenceProblemOfLossMinimization()
+            {
+
+            }
+            public void JobSequenceProblemOfLossMinimizaitionStrategy()
+            {
+
+            }
+            public void HuffmanCoding()
+            {
+
+            }
+            public void EfficientHuffmanCodingForSortedInput()
+            {
+
+            }
+            public void HuffmanDecoding()
+            {
+
+            }
+            public void WaterConnectionProblem()
+            {
+
+            }
+            public void PolicemneCatchTrives()
+            {
+
+            }
+            public void MinimumSwapsForBracketBalancing()
+            {
+
+            }
+            public void FitingShelvesProblem()
+            {
+
+            }
+            public void AssignMiceToHoles()
+            {
+
+            }
+        }
+
+        public class GreedyAlgorithmInGraph
+        {
+            public void KruskalMinimumSpanningTree()
+            {
+
+            }
+            public void PrimMinimumSpanningTree()
+            {
+
+            }
+            public void BrouvkaMinimumSpanningTree()
+            {
+
+            }
+            public void ReverseDeleteForMST()
+            {
+
+            }
+            public void DijkastraShortestPath()
+            {
+
+            }
+            public void DialAlgorithm()
+            {
+
+            }
+            public void DijkstraAlgorithForAdjacencyList()
+            {
+
+            }
+            public void PrimMST_ForAdjacencyList()
+            {
+
+            }
+            public void CorrectnessOfGreedyAlgorithm()
+            {
+
+            }
+            public void MinimumCostOfConnection()
+            {
+
+            }
+            public void MaxFlowProblemIntroduction()
+            {
+
+            }
+            public void NumberOfSingleCycleComponentsInUndirectedGraph()
+            {
+
+            }
+        }
+        
+        public class GreedyAlgorithmInArray
+        {
+            public void MinimumProductSubsetOfArray()
+            {
+
+            }
+            public void MaximunProductSubsetOfArray()
+            {
+
+            }
+            public void MinimumSumOfProductOfArray()
+            {
+
+            }
+        }
+        public class GreedyAlgorithInOS
+        {
+            public void FirstFitAlgorithmInMemoryManagement()
+            {
+
+            }
+            public void BestFitAlgorithmInMemoryManagement()
+            {
+
+            }
+            public void WorstFitAlgorithmInMemoryManagement()
+            {
+
+            }
+            public void NextFitAlgorithmInMemoryManagement()
+            {
+
+            }
+            public void ShortestJobFirstScheduling()
+            {
+
+            }
+            public void SchedulingPriorityTasks()
+            {
+
+            }
+        }
+        public class ApproximateGreedyAlgorithmForNP_Complete
+        {
+            public void SetCoverProblem()
+            {
+
+            }
+            public void BinPackingProblem()
+            {
+
+            }
+            public void GraphColoring()
+            {
+
+            }
+            public void K_CenterProblem()
+            {
+
+            }
+            public void ShortestSuperStringProblem()
+            {
+
+            }
+        }
+    }
+
+    public class Search
+    {
+        Sorting listSort = new Sorting();
+        List<int> unSortedList = new List<int>() { 7, 3, 2, 8, 5, 11 };
+        
+        /// <summary>
+        /// Find element comparing every item
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns>O(n)</returns>
+        public int LinearSearch(int num)
+        {
+            return unSortedList.Find(item => item==num);
+        }
+
+        /// <summary>
+        /// Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half. The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n). 
+        /// </summary>
+        /// <param name="sortedList"></param>
+        /// <param name="num"></param>
+        /// <returns>index of the input at O(nLog(n))</returns>
+        public int BinarySearchOnSortedList(List<int> sortedList, int startIndex, int endIndex, int num)
+        {
+            if(sortedList.Any() && sortedList.Count() > 1)
+            {
+                int middleIndex = startIndex + (endIndex - startIndex) / 2;
+                if (sortedList[middleIndex] == num) return middleIndex;
+
+                if (sortedList[middleIndex] > num)
+                    return BinarySearchOnSortedList(sortedList, startIndex, middleIndex - 1, num);
+                return BinarySearchOnSortedList(sortedList, middleIndex + 1, endIndex, num);
+            }
+            return -1;
+        }
+
+
+        /// <summary>
+        /// Searching in graph. eg, {2,0,3,1}  : 
+        ///   ( 0 )-->( 1 ) 
+        ///    ||
+        ///   ( 2 )-->( 3 )
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public int BreathFirstSearchOnGraph(int num)
+        {
+            
+            return 0;
+        }
+        public int DepthFirstSearch(int num)
+        {
+            //this.unSortedList
+            return 0;
+        }
+    }
+
+    public class Sorting
+    {
+
+        /// <summary>
+        /// Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one. See the following C implementation for details.
+        /// n*n > n*log(n) => n > log(n) 
+        /// When n=10 > log(n)~2.3
+        /// When n=1,000,000 > log(n)~13.8
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns>Sortedlist with O(nLog(n))</returns>
+        public List<int> MegreSort(List<int> list, int leftIndex, int rightIndex)
+        {
+            if(leftIndex < rightIndex)
+            {
+                int middleIndex = leftIndex + (rightIndex - leftIndex) / 2;
+                MegreSort(list, leftIndex, middleIndex);
+                MegreSort(list, middleIndex + 1, rightIndex);
+                Merge(list, leftIndex, middleIndex, rightIndex);
+            }
+            return list;
+        }
+        private List<int> Merge(List<int> list, int leftIndex, int middleIndex, int rightIndex)
+        {
+            // Copy data to two sub-lists
+            var leftList = list.GetRange(leftIndex, middleIndex);
+            var rightList = list.GetRange(middleIndex + 1, rightIndex);
+            
+            int i=0, j = 0, k= leftIndex;
+            // Initial index of merged
+            while (i<leftList.Count() && j < rightList.Count())
+            {
+                if (leftList.ElementAt(i) <= rightList.ElementAt(j))
+                {
+                    list[k] = leftList.ElementAt(i);
+                    i++;
+                }
+                else
+                {
+                    list[k] = rightList.ElementAt(i);
+                    j++;
+                }
+                k++;
+            }
+
+            //merge remaining leftList
+            while (i < leftList.Count())
+            {
+                list[k] = leftList.ElementAt(i);
+                i++;
+                k++;
+            }
+            //merge remaining rightList
+            while (j < rightList.Count())
+            {
+                list[k] = rightList.ElementAt(i);
+                j++;
+                k++;
+            }
+
+            return list;
+        }
+
+
+        /// <summary>
+        /// Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. 
+        /// n*n > n*log(n) => n > log(n) 
+        /// When n=10 > log(n)~2.3
+        /// When n=1,000,000 > log(n)~13.8
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns>Sortedlist with O(nLog(n))</returns>
+        public List<int> QuickSort(List<int> list)
+        {
+            
+            return list;
+        }
+
+
+        /// <summary>
+        /// Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns>Sortedlist with O(n^2)</returns>
+        public List<int> BubbleSort(List<int> list)
+        {
+            for (int i = 0; i < list.Count() - 1; i++)
+            {
+                bool swapped = false;
+                for (int j = 0; j < list.Count() - 1 - i; j++)
+                {
+                    if (list[j] > list[j + 1])
+                    {
+                        int temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+                // if no swap is happening, its sorted: then break
+                if (!swapped) break;
+            }
+            return list;
+        }
+        public List<int> RecusiveBubbleSort(List<int> list, int sortFrom)
+        {
+            bool swapped = false;
+            for (int j = 0; j < list.Count() - 1 - sortFrom; j++)
+            {
+                if (list[j] > list[j + 1])
+                {
+                    int temp = list[j];
+                    list[j] = list[j + 1];
+                    list[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            // if no swap is happening, its sorted: then break
+            if (!swapped) return list;
+
+
+            RecusiveBubbleSort(list, sortFrom + 1);
+            return list;
+        }
+
+        /// <summary>
+        /// Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns>sortedList with O(n^2)</returns>
+        public List<int> InsertionSort(List<int> list)
+        {
+            int n = list.Count();
+            for (int i = 1; i < n; ++i)
+            {
+                int key = list[i];
+                int j = i - 1;
+
+                while (j >= 0 && list[j] > key)
+                {
+                    list[j + 1] = list[j];
+                    j = j - 1;
+                }
+                list[j + 1] = key;
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// Find min of unsorted portion, replace with front value
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public List<int> SelectionSort(List<int> list)
+        {
+            for(int i=0; i<list.Count(); i++)
+            {
+                int minIndex = i;
+               for(int j=0; j<list.Count(); j++)
+                {
+                    if(list[j] < list[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+               
+                if(minIndex != i)
+                {
+                    int temp = list[i];
+                    list[i] = list[minIndex];
+                    list[minIndex] = temp;
+                }
+            }
+            return list;
+        } 
+        
+        public List<int> PigonHoleSort(List<int> list)
+        {
+            return list;
+        }
+        public List<int> TreeSort(List<int> list)
+        {
+            return list;
+        }
+        public List<int> OddEvenSort(List<int> list)
+        {
+            return list;
+        }
+        public List<int> ShellSort(List<int> list)
+        {
+            return list;
+        }
+
+    }
+
+    public class CollectionImplementaion
+    {
+        List<int> list = new List<int>();
+        // Does not allow duplicate or null key or value
+        Hashtable hashTable = new Hashtable();
+        //allows one null key and any number of duplicate value
+        Dictionary<int, string> hashMap = new Dictionary<int, string>();
+        // can't add duplicate value 
+        //Return 'TRUE' on successful add. can be use to filter duplicate
+        HashSet<int> hashSet = new HashSet<int>();
+        //can be use for rotation
+        Queue<int> queue = new Queue<int>();
+
+        public void ImpleFun()
+        {
+            CollectionImplementaion instance = new CollectionImplementaion();
+            instance.list.Add(1);
+            instance.list.BinarySearch(2);
         }
     }
 
@@ -313,12 +783,12 @@ namespace IBM_ASSESSMENT_PREP
 
     public class Graph
     {
-        public Int16 ShortesPath(List<List<Int16>> matrix)
+        public int ShortesPath(List<List<int>> matrix)
         {
-            Int16 minToLeaf = 0;
+            int minToLeaf = 0;
             foreach (var row in matrix)
             {
-                minToLeaf += row.Any() ? row.Min() : (Int16)0;
+                minToLeaf += row.Any() ? row.Min() : (int)0;
             }
             return minToLeaf;
         }
@@ -488,5 +958,34 @@ namespace IBM_ASSESSMENT_PREP
             Console.WriteLine(result);
 
         }
+
+        public static int countingValleys(int steps, string path)
+        {
+            int seaLevel = 0;
+            int vallyTraverse = 0;
+            bool countVally = true;
+            foreach (Char step in path)
+            {
+                if (step == 'D')
+                {
+                    seaLevel -= 1;
+                }
+                else
+                {
+                    seaLevel += 1;
+                }
+                if (seaLevel == -1 && countVally)
+                {
+                    vallyTraverse += 1;
+                    countVally = false;
+                }
+                if (seaLevel == 0)
+                {
+                    countVally = true;
+                }
+            }
+            return vallyTraverse;
+        }
+
     }
 }
