@@ -119,17 +119,23 @@ namespace IBM_ASSESSMENT_PREP
 
             // Using Breath-First-Search Algorithm
             HashSet<string> visited = new HashSet<string>();
-            LinkedList<string> nextToVisit = new LinkedList<string>();
-            nextToVisit.AddLast(stringInput);
             visited.Add(stringInput);
+
+            //LinkedList<string> nextToVisit = new LinkedList<string>();
+            //nextToVisit.AddLast(stringInput);
+
+            Queue<string> nextToVisit = new Queue<string>();
+            nextToVisit.Enqueue(stringInput);
+
 
             string temp;
             bool level = false;
 
-            while (nextToVisit.Any())
+            while (nextToVisit.Count>0)
             {
                 stringInput = nextToVisit.First();
-                nextToVisit.RemoveFirst();
+                //nextToVisit.RemoveFirst();
+                stringInput = nextToVisit.Dequeue();
                 if (IsValidString(stringInput))
                 {
                     result.Add(stringInput);
@@ -146,7 +152,8 @@ namespace IBM_ASSESSMENT_PREP
                     temp = stringInput.Substring(0, i) + stringInput.Substring(i + 1);
                     if (!visited.Contains(temp))
                     {
-                        nextToVisit.AddLast(temp);
+                        //nextToVisit.AddLast(temp);
+                        nextToVisit.Enqueue(temp);
                         visited.Add(temp);
                     }
                 }
