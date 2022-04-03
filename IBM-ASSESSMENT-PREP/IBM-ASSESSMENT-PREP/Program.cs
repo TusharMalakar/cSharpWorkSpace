@@ -9,7 +9,8 @@ namespace IBM_ASSESSMENT_PREP
     {
         public static void Main(string[] args)
         {
-            RemoveInvalidParenthesis("()))()(");
+            List<string> ValidStrings = RemoveInvalidParenthesis("(A+))B)");
+            var index = ValidStrings.BinarySearch("()()");
             var res = "123".ToCharArray();
             Algorithms.countingValleys(12, "DDUUDDUDUUUD");
             String word = "AABBCCCBAT";
@@ -637,8 +638,8 @@ namespace IBM_ASSESSMENT_PREP
         {
             public int Height { get; set; }
             public int Data { get; set; }
-            public AvlNodeModel? LeftChild { get; set; }
-            public AvlNodeModel? RightChild { get; set; }
+            public AvlNodeModel LeftChild { get; set; }
+            public AvlNodeModel RightChild { get; set; }
             public AvlNodeModel(int data)
             {
                 this.Height = 1;
@@ -783,8 +784,8 @@ namespace IBM_ASSESSMENT_PREP
         public class BSTNode
         {
 
-            public BSTNode? LeftChild { get; set; }
-            public BSTNode? RightChild { get; set; }
+            public BSTNode LeftChild { get; set; }
+            public BSTNode RightChild { get; set; }
             public int Value { get; set; }
 
         }
@@ -839,7 +840,7 @@ namespace IBM_ASSESSMENT_PREP
         public class ListNode
         {
             public Object Data { get; set; }
-            public ListNode? Next { get; set; }
+            public ListNode Next { get; set; }
 
         }
 
