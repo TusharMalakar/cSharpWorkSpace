@@ -103,6 +103,139 @@ namespace IBM_ASSESSMENT_PREP
             avl.Insert(4);
             avl.Insert(3);
             avl.Insert(2);
+            int[] A = {  3,5,1 };
+            solution(A);
+            solution2(A);
+            findCount("23");
+            GetCombination(A.ToList());
+            Combos(A);
+        }
+
+        private static void Combos(int[] arr)
+        {
+            for (var i = 0; i <= Math.Pow(2, arr.Length); i++)
+            {
+                Console.WriteLine();
+                var j = i;
+                var idx = 0;
+                do
+                {
+                    if ((j & 1) == 1) 
+                        Console.Write($"{arr[idx]} ");
+                } while ((j >>= 1) > 0 && ++idx < arr.Length);
+            }
+        }
+        private static List<int> GetCombination(List<int> list)
+        {
+            List<int> result = new List<int>(); 
+            double count = Math.Pow(2, list.Count);
+            for (int i = 1; i <= count - 1; i++)
+            {
+                for (int j = 0; j < list.Count; j++)
+                {
+                    int b = i & (1 << j);
+                    if (b > 0)
+                    {
+                        result.Add(list[j]);
+                    }
+                }
+                Console.WriteLine();
+            }
+            return result;
+        }
+
+        // Function to count the number of
+        // possible numbers divisible by 3
+        static int findCount(string S)
+        {
+
+            int sumOfChars = 0;
+            for (int i = 0; i < S.Length; ++i)
+            {
+                // Adding all numbers
+                sumOfChars += int.Parse(S[i].ToString());
+            }
+
+            int totalNumDivisibleBy3 = 0;
+            if (sumOfChars % 3 == 0)
+                totalNumDivisibleBy3++;
+
+            for (int i = 0; i < S.Length; ++i)
+            {
+                int parsedCharVal = int.Parse(S[i].ToString());
+                int difference = sumOfChars - parsedCharVal;
+                for (int j = 0; j <= 9; ++j)
+                {
+                    if ((difference + j) % 3 == 0 && j != parsedCharVal)
+                        ++totalNumDivisibleBy3;
+                }
+            }
+            return totalNumDivisibleBy3;
+        }
+
+        /**
+         * : You are given a string S, consisting of N digits, that represents a number. 
+         * You can change at most one digit in the string to any other digit. How many 
+         * different numbers divisible by 3 can be obtained in this way? Write a 
+         * function: def solution (5) that, given a string S of length N, returns an integer 
+         * specifying how many numbers divisible by 3 can be obtained with at most one change of a digit. 
+         * Examples: 1. Given S = "23", the function should return 7. 
+         * All numbers divisible by 3 that can be obtained after at most one change are: "03", "21", "24", "27", "33", "63" and "93". 2. 
+         * Given S = "0081", the function should return 11. All numbers divisible by 3 that can be obtained with at most one change are: 
+         * "0021", "0051", "0081", "0084", "0087", "0381", "0681", "0981", "3081", "6081" and "9081". 3. Given S = "022", the function should return 9. 
+         * All numbers divisible by 3 that can be obtained with at most one change are: "012", "021", "024", "027", "042", "072", "222", "522" and "822". 
+         * Write an efficient algorithm for the following assumptions: N is an integer within the range (1...100,000); • 
+         * string S consists only of digits (0-9).
+         */
+        public static int solution(int[] A)
+        {
+            // write your code in C# 6.0 with .NET 4.5 (Mono)
+            string strV = string.Empty;
+            foreach (var item in A.Reverse())
+            {
+                strV += item.ToString();
+            }
+            string multipleOf17 = (17 * Int32.Parse(strV)).ToString();
+            int sumOfDigits = 0;
+            foreach(char num in multipleOf17)
+            {
+                sumOfDigits += int.Parse(num.ToString());
+            }
+            
+            return sumOfDigits;
+        }
+
+        //we will call a sequence of integers a spike if they first increase (strictly) and then decrease
+        public static int solution2(int[] A)
+        {
+            if (!A.Any()) return 0;
+            Dictionary<int, int> hashMap = new Dictionary<int, int>();
+            int largestNum = -2147483648;
+
+            // filterout duplicate and get lagest number
+            foreach(var num in A)
+            {
+                if (!hashMap.ContainsKey(num))
+                {
+                    hashMap.Add(num, 1);
+                }
+                else
+                {
+                    hashMap[num] = hashMap[num] + 1;
+                }
+                   
+                 largestNum = Math.Max(largestNum, num);
+                   
+            }
+
+            int lenOfLongestSpike = 1;
+            foreach (var num in hashMap)
+            {
+                if (num.Key == largestNum) continue;
+                lenOfLongestSpike += Math.Min(2, num.Value);
+            }
+
+            return lenOfLongestSpike;
         }
 
         /// <summary>
@@ -129,7 +262,7 @@ namespace IBM_ASSESSMENT_PREP
 
 
             string temp;
-            bool level = false;
+            bool validString = false;
 
             while (nextToVisit.Count>0)
             {
@@ -139,10 +272,11 @@ namespace IBM_ASSESSMENT_PREP
                 if (IsValidString(stringInput))
                 {
                     result.Add(stringInput);
-                    level = true;
+                    validString = true;
                 }
 
-                if (level) continue;
+                if (validString) continue; // when validString skip,
+                // else, do operation on substring
                 for (int i = 0; i < stringInput.Length; i++)
                 {
                     if (!IsParenthesis(stringInput[i])) continue;
@@ -174,9 +308,6 @@ namespace IBM_ASSESSMENT_PREP
                 {
                     count--;
                 }
-
-                if (count < 0)
-                    return false;
             }
             return count == 0;
         }
